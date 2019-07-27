@@ -3,6 +3,7 @@ arkaFood = (total,voc,jarak,pajak) => {
     let pjk
     let ongkir
     let w
+    q = 0
     if (voc != false) {
         if (voc == "ARKAFOOD5") {
           q = 0
