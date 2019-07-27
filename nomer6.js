@@ -1,17 +1,21 @@
 arkaFood = (total,voc,jarak,pajak) => {
     let bayar
+    let pjk
+    let ongkir
+    let w
     if (voc != false) {
-        let q
-        if (voc == 'ARKAFOOD5') {
-            if (bayar >= 50000) {
+        if (voc == "ARKAFOOD5") {
+          q = 0
+            if (total >= 50000) {
                 q = total*50/100
                 if (q>50000) {
                     q = 50000
                 }
             }
         }
-        if(voc == 'DITRAKTIRDEMY'){
-            if (bayar >= 30000) {
+        if(voc == "DITRAKTIRDEMY"){
+          q = 0
+            if (total >= 25000) {
                 q = total*60/100
                 if (q > 30000) {
                     q = 30000
@@ -19,12 +23,22 @@ arkaFood = (total,voc,jarak,pajak) => {
             }
         }
     }
-    if (condition) {
-        
+    if (pajak==true) {
+        pjk = total * 5/100
+    }else{
+      pjk = 0
+    }
+    ongkir = 5000
+    if (jarak>1.5) {
+        w = jarak-1.5
+        ongkir = Math.ceil(w) * 3000 + 5000
     }
 
+    bayar = total - q + pjk + ongkir
+    console.log(bayar);
+    
 
 }
 
-arkaFood(7500,"ARKAFOOD5",5,"FALSE")
+arkaFood(75000,"ARKAFOOD5",5,false)
 
