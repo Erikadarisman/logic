@@ -6,7 +6,6 @@ arkaFood = (total,voc,jarak,pajak) => {
     q = 0
     if (voc != false) {
         if (voc == "ARKAFOOD5") {
-          q = 0
             if (total >= 50000) {
                 q = total*50/100
                 if (q>50000) {
@@ -15,7 +14,6 @@ arkaFood = (total,voc,jarak,pajak) => {
             }
         }
         if(voc == "DITRAKTIRDEMY"){
-          q = 0
             if (total >= 25000) {
                 q = total*60/100
                 if (q > 30000) {
